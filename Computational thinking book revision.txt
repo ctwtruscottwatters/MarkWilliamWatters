@@ -1,0 +1,360 @@
+Notetaking, Introduction to Computation and Programming using Python
+
+Ch. 1:
+
+declarative knowledge
+
+imperative knowledge
+
+guess the square root by (guess + square/guess)/2
+
+75 + 100/75 / 2 75.75/2 
+37.1841
+
+Turing completeness
+
+Fixed program computer
+
+algorithm definition, as like a recipe, a simple sequence of steps with a flow of control (as in a flow chart) and execut
+
+computations
+
+infix operators
+literals
+
+syntax
+
+semantics
+
+static semantics
+
+    
+Ch. 2: 
+
+Objects Expressions and Numerical Types
+
+Scalar, non scalar
+
+integers, floating point numbers
+
+Boolean: True and False
+
+Operators and objects form expressions
+
+== != > >= < <= + * / // - ( ) **
+
+<< >> >>= <<= |= ^= ~= and or not
+
+is
+is not
+is in
+for x in
+if x is not
+if x is
+if x in y
+if not (x in y)
+
+reserved words
+
+and
+as
+assert
+async
+await
+break
+class
+continue
+def
+del
+elif
+else
+except
+False
+finally
+for
+from
+global
+if
+import
+in
+is
+lambda
+nonlocal
+None
+not
+or
+pass
+raise
+return
+True
+try
+while
+with
+yield
+
+BRANCHING 21
+
+straight line programs
+
+
+Ch. 3:
+    
+    x = int(input("Enter an integer: "))
+    ans = 0
+    while(ans ** 2 < abs(x)):
+    if (ans ** 2) != abs(x):
+        print("{} is not a perfect square".format(x))
+    else:
+        print("{} is a perfect square of {} x {}".format(x, ans, ans))
+guess and check variant ... exhaustive enumeration
+approximation
+51 review exhaustive enumeration square root
+
+bisection search
+
+numbers, assignments, input outpht, comparisons, relations, looping constructs
+function definition, function parameters, invocation / call
+lambda abstraction
+test functions
+keyword arguments and default function parameter values
+unpacking operator (variable number of function parameters)
+namespace, scope, local variable, global variable, symbol table
+lexical scoping
+4.2 Specifications
+
+A specification defines a contract between the software designer implementing a function and the end user of that function
+
+Assumptions
+guarantees
+Decomposition -> creating structure, allowing us to reuse code and break it into autonomous and usable pieces
+Abstraction -> hides detail from other areas, uses information relevant to context
+
+p. 83
+
+Declarative Knowledge: Statements of Fact
+Imperative Knowledge: Refers to How-To Statements of Fact
+Binary Data, Computers as binary machines
+Types: int, float, string, tuple, list, dictionary, Boolean, object, method / function, combinations e.g. lists of ints, floats, strings, tuples, lists; dictionaries as key value pairs, value able to be a combined type; integer and floating point range and precision
+
+assignment LHS RHS bind variable id
+
+Conditionals, branching, loops
+
+if - else; if - elif - else
+
+for x in iterable type e.g. generator
+for x in range(0, n + 1, step)
+for x in list, dictionary, string, iterable types
+
+while ():
+    
+Operators and operands
+
+Addition, subtraction, multiplication, integer division, floating point division, modulus, exponentiation, concatenation
+
+Class methods and object types, operator overloading
+
+Logical operators, and, or, not
+
+import as
+from x import y as z
+OOP
+
+Function abstraction and decomposition into functions
+
+The simplest branching flow of control is a conditional, evaluated as a boolean expression which is True or False
+
+not and or
+
+NOT -> True if A is False, False if A is True
+AND -> True if both are True
+OR -> True if Either or Both are True (False if Both are False)
+
+making choices via branching
+
+program counter execution is still linear
+
+nested if else conditions for 3 or 2 if elif else clauses
+
+
+if ( ):
+    if ( ):
+        if():
+        
+        else:
+    else:
+else:
+
+
+
+while(condition evaluating to True):
+    set choice
+    update condition
+extraneous parameters
+
+while (condition):
+    expression of literals and operators on objects
+   
+condition evaluates to a Boolean
+if condition is True, until it is False take all expressions and execute them in the program counter
+check condition until it evaluates Falss
+repeat until condition is False
+
+n = 0
+while(n < 5):
+    print(n)
+    n += 1
+    
+for n in range(5):
+    print(n)
+    
+    
+0, 1, 2, 3, 4
+
+while(condition_1):
+    while(condition_2):
+        if x:
+            break
+        else:
+            continue
+      expression_b
+expression_c
+
+Objects Expressions and Numerical Types
+
+Scalar, non scalar
+
+integers, floating point numbers
+
+Boolean: True and False
+
+Operators and objects form expressions
+
+== != > >= < <= + - * / // ( ) ** % =
+if x in y is not False
+if x != q is not False or y == r is True
+
+<< >> & | ~ ^
+
+and or not
+
+if ():
+
+elif:
+
+else:
+
+for x in range, iterable
+
+while (condition):
+
+if ():
+    if():
+        if():
+
+(g + x/g)/2
+average
+
+is
+is not
+is in
+for x in
+if x is not
+if x is
+if x in y
+if not (x in y)
+
+reserved words
+
+and
+as
+assert
+async
+await
+break
+class
+continue
+def
+del
+elif
+else
+except
+False
+finally
+for
+from
+global
+if
+import
+in
+is
+lambda
+nonlocal
+None
+not
+or
+pass
+raise
+return
+True
+try
+while
+with
+yield
+
+
+p. 83
+
+Python standard library, module documentation, included functions
+
+Functions as objects, higher order programming, treating pointers to functions as other function parameters
+
+methods.
+
+Chapter 5 -> review all definitions back to Ch. 0 and summarise definition
+
+    
+Ch 6.
+base case, recursive or induction case
+
+Definition of factorial recursively and iteratively
+
+Fibonacci numbers, fraction summation, sequences and series, harmonic sum
+
+Recursive implementation of Fibonacci numbers
+
+Palindrome Testing
+
+Review
+
+Ch. 7
+
+Modules and Files
+
+
+validity, modularity of tasks / specifications / function definitions, breaking up a task into smaller subtasks, example inputs, outputs
+
+Testing and Debugging Lecture 1 edX
+
+chart
+
+DEFENSIVE PROGRAMMING
+
+-    Write Specifications for Functions, Contextual Def'ns to accomplish task'
+-    Modularise programs (ize -ise British)
+-    Check conditions on inputs/outputs
+
+Testing / Validation
+
+-    Compare input and output to specs
+-    "It's not working"
+-    "How can I break my program?"
+
+Debugging
+
+-  Study events leading to an error
+-  "Why is it not working"
+-  "How can I fix my program"
+
+
+    
