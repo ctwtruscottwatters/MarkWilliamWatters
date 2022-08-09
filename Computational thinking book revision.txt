@@ -112,7 +112,7 @@ approximation
 
 bisection search
 
-numbers, assignments, input outpht, comparisons, relations, looping constructs
+numbers, assignments, input output, comparisons, relations, looping constructs
 function definition, function parameters, invocation / call
 lambda abstraction
 test functions
@@ -357,4 +357,235 @@ Debugging
 -  "How can I fix my program"
 
 
+RETURN TO CHAPTERS 7 TO 9 LATER ON
+
+
+
+Classes and Objects
+thinking about objects as collections of data and methods
+
+Type of an object
+__init__, __str__, __repr__, __gt__, __ge__, __lt__, __le__ etc ...
+abstract data type - set of objects and the data and operations on those objects
+inheritance, polymorphism
+Specifications of operations on that data define an interface between the abstract data type and the latter Python program
+
+The interface provides an abstraction barrier
+
+Decomposition creates structure, abstraction suppresses detail (linearising and solving implementation into individual and comprehensive functions, objects, variables, and operators and branching structures, and loops)
+
+defensive programming. unexpected condition
+
+exceptions
+
+IndexError
+NameError
+TypeError
+
+try:
+
+except ValueError:
+except IOError:
+except ZeroDivisionError:
+else:
+finally:
+
+ALL FOR ROTE MEMORISATION TERM FOR TERM, TYPE FOR TYPE, OPERATOR FOR OPERATOR, CLAUSE FOR CLAUSE, KEYWORD FOR KEYWORD and MIT syllabus implemented in Python
+
+Detour back to Newton Raphson
+
+successive approximation
+
+
+Approximation method, Newton's method. 
+
+while not true guess is answer
+guess = guess - (y(guess) / dy/dx(guess))
+
+Bisection Search
+
+guess = (high + low)/2.0
+    or
+take the average of guess ... as either half of guess as thw low or high point and divide guess by two
+g + (x/g)/2
+
+exhaustive enumeration
+
+for the range of possible values, set an epsilon between the entire range from the low point, increment it until it reachws the high point
+
+
+Monkey Sort
+
+|
+|   . .  /  .  . .. 
+| . . ./    .
+|    / .  .    . .
+|  /    .  .    .
+|/___________
+
+Complexity: 
+
+def monkey_sort(L):
+while not is_sorted(L):
+    random.sort(L)
+
+
+Review Google for implementations of Monkey Sort
+
+
+Bubble Sort
+
+def bubble_sort(L):
+    swap = False
+    while not swap:
+        swap = True
+            for j in range(1, len(L)):
+                if L[ j- 1 ] > L[ j ]:
+                    swap = False
+                    temp = L[ j ]
+                    L[ j ] = L [ j - 1 ]
+                    L[ j - 1 ] = temp
+                    
+                    
+Selection Sort
+
+def selectionsort(L):
+    end = 0
+    while end != len(L):
+        for i in range(end, len(L)):
+            if L[i] < L[end]:
+                L[end] = L[i]
+                L[i] = L[end]
+        end += 1
+        
+        
+Merge Sort
+
+
+def merge(left, right):
+    result = []
+    i, j = 0, 0
+    while (i < len(left)) and (j < (len(right))):
+        print("i: {} j: {}".format(i, j))
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        elif left[i] > right[j]:
+            result.append(right[j])
+            j += 1
+    while (i < len(left)):
+        result.append(left[i])
+        i += 1
+    while (j < len(right)):
+        result.append(right[j])
+        j += 1
+    print(result)
+    return result
+      
+      
+def merge_sort(L):
     
+    if len(L) >= 2:
+        mid = len(L) // 2
+        print("mid: {}, {}, {}".format(mid, L[:mid], L[mid:]))
+        left = merge_sort(L[:mid])
+        right = merge_sort(L[mid:])
+        print(left, right)
+        return merge(left, right)
+    else:
+        return L[:]
+ 
+def main():
+    L = [2, 4, 8, 1, 7, 9, 3, 5]
+    print("Final merged list: {}".format(merge_sort(L)))
+    print("CTW Truscott Watters MIT Student")
+    
+    
+if __name__ == "__main__": main()
+
+
+MS OUTPUT
+
+mid: 4, [2, 4, 8, 1], [7, 9, 3, 5]
+mid: 2, [2, 4], [8, 1]
+mid: 1, [2], [4]
+[2] [4]
+i: 0 j: 0
+[2, 4]
+mid: 1, [8], [1]
+[8] [1]
+i: 0 j: 0
+[1, 8]
+[2, 4] [1, 8]
+i: 0 j: 0
+i: 0 j: 1
+i: 1 j: 1
+[1, 2, 4, 8]
+mid: 2, [7, 9], [3, 5]
+mid: 1, [7], [9]
+[7] [9]
+i: 0 j: 0
+[7, 9]
+mid: 1, [3], [5]
+[3] [5]
+i: 0 j: 0
+[3, 5]
+[7, 9] [3, 5]
+i: 0 j: 0
+i: 0 j: 1
+[3, 5, 7, 9]
+[1, 2, 4, 8] [3, 5, 7, 9]
+i: 0 j: 0
+i: 1 j: 0
+i: 2 j: 0
+i: 2 j: 1
+i: 3 j: 1
+i: 3 j: 2
+i: 3 j: 3
+[1, 2, 3, 4, 5, 7, 8, 9]
+Final merged list: [1, 2, 3, 4, 5, 7, 8, 9]
+CTW Truscott Watters MIT Student
+
+[Program finished]
+
+Ch. 7 to 9
+
+
+Chapter 10. Classes and Object-Oriented Programming (OO, UML)
+
+
+
+class Object(object):
+    def __init__(self, name, birthdate):
+        self.name = name
+        self.birthdate = birthdate
+        
+class definition, data attributes, method attributes, setters and getters, data abstraction, inheritance
+
+import numpy
+import math
+
+# Charles Thomas Wallace Truscott Watters
+class OrderedPair(object):
+    def __init__(self, tups):
+        self.tups, tups = tups, []
+    def __str__(self):
+        return str(self.tups)
+class LinearEquation(OrderedPair):
+    def __init__(self, m, b, low, high):
+        self.m = m
+        self.b = b
+        self.low = low
+        self.high = high
+        tups = []
+        for x in range(low, high, 1):
+            tups.append((x, self.m * x + self.b),)
+            print(x, self.m * x + self.b)
+        super().__init__(tups)
+def main():
+        x = LinearEquation(2, 5, 0, 11)
+        print(x)
+            
+if __name__ == "__main__": main()
+
+
